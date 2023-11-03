@@ -7,13 +7,14 @@ public abstract class NhanSu {
     private int soNgayLamViec;
     private double luongMotNgay;
     public abstract double tinhLuong();
+
     public void display()
     {
-        System.out.println("Họ Và Tên= " + hoVaTen + '\'' +
-                ", Mã số = " + maSO + '\'' +
-                ", Số điện thoại = " + soDienThoai + '\'' +
-                ", Số ngày làm việc = " + soNgayLamViec +
-                ", Lương một ngày = " + luongMotNgay);
+        System.out.println("Họ Và Tên: " + hoVaTen + '\n' +
+                "Mã số: " + maSO + '\n' +
+                "Số điện thoại: " + soDienThoai + '\n' +
+                "Số ngày làm việc: " + soNgayLamViec +
+                "\nLương một ngày: " + luongMotNgay);
 
     }
     public NhanSu(String hoVaTen, String maSO, String soDienThoai, int soNgayLamViec, double luongMotNgay) {
@@ -30,6 +31,9 @@ public abstract class NhanSu {
         this.soDienThoai = soDienThoai;
         this.soNgayLamViec = soNgayLamViec;
     }
+
+
+
 
 
     public NhanSu() {
@@ -74,4 +78,7 @@ public abstract class NhanSu {
     public void setLuongMotNgay(double luongMotNgay) {
         this.luongMotNgay = luongMotNgay;
     }
+
+
+
 }

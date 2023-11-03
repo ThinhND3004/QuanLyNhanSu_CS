@@ -5,6 +5,8 @@ public class CongTy {
     private String maSoThue;
     private long doanhThuHangThang;
 
+    private double coPhanCongTy = 100;
+
     public CongTy(String tenCongTy, String maSoThue, long doanhThuHangThang) {
         this.tenCongTy = tenCongTy;
         this.maSoThue = maSoThue;
@@ -16,6 +18,14 @@ public class CongTy {
 
     public String getTenCongTy() {
         return tenCongTy;
+    }
+
+    public double getCoPhanCongTy() {
+        return coPhanCongTy;
+    }
+
+    public void setCoPhanCongTy(double coPhanCongTy) {
+        this.coPhanCongTy = coPhanCongTy;
     }
 
     public void setTenCongTy(String tenCongTy) {

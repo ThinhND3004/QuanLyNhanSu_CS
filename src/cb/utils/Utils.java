@@ -1,5 +1,6 @@
 package cb.utils;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Utils {
@@ -40,15 +41,17 @@ public class Utils {
         Scanner scanner = new Scanner(System.in);
         double result = 0.0;
         boolean check = true;
-        sc = new Scanner(System.in);
         do {
             try {
                 System.out.println(welcome);
                 result = scanner.nextDouble();
-                if (result >= min || result <= max) {
+                if (result >= min && result <= max) {
                     check = false;
+                } else {
+                    System.out.println("Số cổ phần còn lại của công ty không đủ! Chỉ còn " + max + "% cổ phần");
                 }
-            } catch (Exception e) {
+            } catch (InputMismatchException e) {
+                System.out.println("Có gì đó sai sai!.");
                 scanner.nextLine();
             }
         } while (check);
@@ -146,4 +149,34 @@ public class Utils {
         } while (check);
         return result;
     }
+
+
+        public static String getPhoneNumber(String message) {
+            String result;
+            boolean cont;
+
+            do {
+                System.out.print(message);
+                result = sc.nextLine();
+
+                cont = false;
+
+                if (result.length() != 10) {
+                    System.out.println("\nSố điện thoại phải chứa đúng 10 chữ số!\n");
+                    cont = true;
+                } else {
+                    for (int i = 0; i < result.length(); i++) {
+                        if (!Character.isDigit(result.charAt(i))) {
+                            System.out.println("\nSố điện thoại không được chứa chữ cái hoặc kí tự đặc biệt!\n");
+                            cont = true;
+                            break;
+                        }
+                    }
+                }
+            } while (cont);
+
+            return result;
+        }
+
+
 }

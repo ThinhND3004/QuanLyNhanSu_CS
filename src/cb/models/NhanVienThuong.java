@@ -5,9 +5,8 @@ public class NhanVienThuong extends NhanSu{
 
     public NhanVienThuong(String hoVaTen, String maSO, String soDienThoai, int soNgayLamViec) {
         super(hoVaTen, maSO, soDienThoai, soNgayLamViec);
-        this.truongPhongQuanLy = truongPhongQuanLy;
         this.setLuongMotNgay(100);
-        this.truongPhongQuanLy = null;
+        this.truongPhongQuanLy = "Chưa có trưởng phòng quản lí";
     }
 
     public void display()

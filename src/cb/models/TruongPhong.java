@@ -9,14 +9,14 @@ public class TruongPhong extends NhanSu{
         super.display();
         System.out.println("Số lượng nhận viên dưới quyền: " + soLuongNhanVienDuoiQuyen);
     }
-    public TruongPhong(String hoVaTen, String maSO, String soDienThoai, int soNgayLamViec, double luongMotNgay, int soLuongNhanVienDuoiQuyen) {
-        super(hoVaTen, maSO, soDienThoai, soNgayLamViec, luongMotNgay);
-        this.soLuongNhanVienDuoiQuyen = soLuongNhanVienDuoiQuyen;
-    }
+//    public TruongPhong(String hoVaTen, String maSO, String soDienThoai, int soNgayLamViec, double luongMotNgay) {
+//        super(hoVaTen, maSO, soDienThoai, soNgayLamViec, luongMotNgay);
+//        this.soLuongNhanVienDuoiQuyen = 0;
+//    }
 
-    public TruongPhong(String hoVaTen, String maSO, String soDienThoai, int soNgayLamViec, int soLuongNhanVienDuoiQuyen) {
+    public TruongPhong(String hoVaTen, String maSO, String soDienThoai, int soNgayLamViec) {
         super(hoVaTen, maSO, soDienThoai, soNgayLamViec);
-        this.soLuongNhanVienDuoiQuyen = soLuongNhanVienDuoiQuyen;
+        this.soLuongNhanVienDuoiQuyen = 0;
         this.setLuongMotNgay(200);
     }
 
