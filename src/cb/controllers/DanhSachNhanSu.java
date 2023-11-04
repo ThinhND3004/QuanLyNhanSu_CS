@@ -41,15 +41,7 @@ public class DanhSachNhanSu extends ArrayList<NhanSu> implements I_NhanSu {
                         String sdt = Utils.getPhoneNumber("Nhập số điện thoại của nhan vin: ");
                         int soNgayLamViec = Utils.getNumber("Nhập số ngày làm việc của nhân viên: ", 0, 10000000);
                         NhanVienThuong newNhanVienThuong = new NhanVienThuong(ten, maSo, sdt, soNgayLamViec);
-                        NhanVienThuong newNhanVienThuong1 = new NhanVienThuong("THỊNH NHÂN VIÊN 1", "SE183042", "0931896063", 123);
-                        NhanVienThuong newNhanVienThuong2 = new NhanVienThuong("THỊNH NHÂN VIÊN 2", "SE183043", "0931896063", 321);
-                        NhanVienThuong newNhanVienThuong3 = new NhanVienThuong("THỊNH NHÂN VIÊN 3", "SE183044", "0931896063", 213);
-                        NhanVienThuong newNhanVienThuong4 = new NhanVienThuong("THỊNH NHÂN VIÊN 4", "SE183045", "0931896064", 312);
                         this.add(newNhanVienThuong);
-                        this.add(newNhanVienThuong1);
-                        this.add(newNhanVienThuong2);
-                        this.add(newNhanVienThuong3);
-                        this.add(newNhanVienThuong4);
                         check = true;
                         break;
                     case 2:
@@ -67,15 +59,7 @@ public class DanhSachNhanSu extends ArrayList<NhanSu> implements I_NhanSu {
                         String sdtTruongPhong = Utils.getPhoneNumber("Nhập số điện thoại của trưởng phòng: ");
                         int soNgayLamViecTruongPhong = Utils.getNumber("Nhập số ngày làm việc của trưởng phòng: ", 0, 10000000);
                         TruongPhong tp = new TruongPhong(tenTruongPhong, maSo, sdtTruongPhong, soNgayLamViecTruongPhong);
-                        TruongPhong tp1 = new TruongPhong("THỊNH TRƯỞNG PHÒNG 1", "SE183402", "0909410592", 345);
-                        TruongPhong tp2 = new TruongPhong("THỊNH TRƯỞNG PHÒNG 2", "SE183403", "0909410592", 354);
-                        TruongPhong tp3 = new TruongPhong("THỊNH TRƯỞNG PHÒNG 3", "SE183404", "0909410592", 435);
-                        TruongPhong tp4 = new TruongPhong("THỊNH TRƯỞNG PHÒNG 4", "SE183405", "0909410592", 534);
                         this.add(tp);
-                        this.add(tp1);
-                        this.add(tp2);
-                        this.add(tp3);
-                        this.add(tp4);
                         check = true;
                         break;
                     case 1:
