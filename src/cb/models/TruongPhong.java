@@ -25,7 +25,7 @@ public class TruongPhong extends NhanSu{
         this.danhSachNhanVienDuoiQuyen = new ArrayList<>();
     }
 
-    public void getDanhSachNhanVienDuoiQuyen() {
+    public void inDanhSachNhanVienDuoiQuyen() {
         for (NhanVienThuong nvt : danhSachNhanVienDuoiQuyen)
         {
             nvt.display();
@@ -36,9 +36,7 @@ public class TruongPhong extends NhanSu{
         danhSachNhanVienDuoiQuyen.add(nvt);
     }
 
-    public TruongPhong(int soLuongNhanVienDuoiQuyen) {
-        this.soLuongNhanVienDuoiQuyen = soLuongNhanVienDuoiQuyen;
-    }
+
 
     public int getSoLuongNhanVienDuoiQuyen() {
         return soLuongNhanVienDuoiQuyen;
@@ -64,4 +62,13 @@ public class TruongPhong extends NhanSu{
         }
     }
 
+    public int kichThuocCuaDanhSachNhanVien()
+    {
+        return danhSachNhanVienDuoiQuyen.size();
+    }
+
+
+    public List<NhanVienThuong> getDanhSachNhanVienDuoiQuyen() {
+        return danhSachNhanVienDuoiQuyen;
+    }
 }

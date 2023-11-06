@@ -22,6 +22,8 @@ public class QuanLyNhanSu {
             menu.addItem("9. Sắp xếp nhân viên toan công ty theo th tự lương giảm dần");
             menu.addItem("10. Giám đốc có số lượng cổ phần nhiều nhất");
             menu.addItem("11. Tính và xuất tổng thu nhập của từng giám đốc");
+            menu.addItem("12. Xuất thông tin quản lí của nhân viên");
+            menu.addItem("13. Xuất tất cả nhân viên dưới quyền của trưởng phòng");
             menu.addItem("0. Kết thúc chương trình.\n");
             deleteAddMenu.addItem("\nBạn muốn xóa hay thêm nhân sự ?");
             deleteAddMenu.addItem("1. Thêm");
@@ -124,6 +126,23 @@ public class QuanLyNhanSu {
                             break;
                         case 11:
                             danhSachNhanSuCuaCongTy.tinhVaXuatTongThuNhapCuaGiamDoc(congTy);
+                            break;
+                        case 12:
+                            NhanVienThuong nhanVienDuocChon = danhSachNhanSuCuaCongTy.getNhanVien();
+                            if (nhanVienDuocChon != null)
+                            {
+                                danhSachNhanSuCuaCongTy.truongPhongQuanLi(nhanVienDuocChon);
+                            } else System.out.println("\nKhông có nhân viên thường nào trong công ty!");
+                            break;
+                        case 13:
+                            TruongPhong truongPhong = danhSachNhanSuCuaCongTy.getTruongPhong();
+                            if (truongPhong != null)
+                            {
+                                danhSachNhanSuCuaCongTy.danhSachNhanVienDuoiQuyen(truongPhong);
+                            } else
+                            {
+                                System.out.println("\nKhông có trưởng phòng nào trong công ty");
+                            }
                             break;
                     }
                 } else System.out.println("\n Công ty của bạn là gì?? Bạn chưa nhập thông tin công ty của mình!");

@@ -243,6 +243,37 @@ public class DanhSachNhanSu extends ArrayList<NhanSu> implements I_NhanSu {
         } catch (Exception e) {}
         return nvChuaCoQuanLy;
     }
+
+    @Override
+    public void danhSachNhanVienDuoiQuyen(TruongPhong truongPhong) {
+        if(truongPhong.kichThuocCuaDanhSachNhanVien() != 0)
+        {
+            for (int i = 0; i < truongPhong.kichThuocCuaDanhSachNhanVien(); i++)
+            {
+                System.out.println("\n" + (i + 1) + ". ");
+                List<NhanVienThuong> danhSach = truongPhong.getDanhSachNhanVienDuoiQuyen();
+                NhanVienThuong nvt = danhSach.get(i);
+                nvt.display();
+            }
+        } else
+        {
+            System.out.println("\nQuản lí này không có bất kì nhân viên dưới quyền nào!");
+        }
+
+    }
+
+    public void truongPhongQuanLi(NhanVienThuong nhanVienThuong)
+    {
+        for (NhanSu nhanSu : this)
+        {
+            if(nhanSu instanceof TruongPhong && nhanVienThuong.getTruongPhongQuanLy().equals(nhanSu.getMaSO()))
+            {
+                System.out.println("\n Quản lí của " + nhanVienThuong.getHoVaTen() + " là:");
+                nhanSu.display();
+            }
+        }
+    }
+
     @Override
     public NhanVienThuong getNhanVien() {
         NhanVienThuong nhanVienDuocLay = null;

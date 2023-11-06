@@ -27,4 +27,8 @@ public interface I_NhanSu {
     void tinhVaXuatTongThuNhapCuaGiamDoc(CongTy congTy);
     double tongLuongToanCongTy();
     NhanVienThuong nhanVienChuaCoTruongPhong();
+
+    void danhSachNhanVienDuoiQuyen(TruongPhong truongPhong);
+
+    void truongPhongQuanLi(NhanVienThuong nhanVienThuong);
 }
