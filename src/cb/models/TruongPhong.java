@@ -55,10 +55,10 @@ public class TruongPhong extends NhanSu{
 
     public void cacNhanVienDuoiQuyen()
     {
+        System.out.println("\n" + this.getHoVaTen() + " quản lí các nhân viên:");
         for (int i = 0; i < danhSachNhanVienDuoiQuyen.size(); i++)
         {
             NhanVienThuong nvt = danhSachNhanVienDuoiQuyen.get(i);
-            System.out.println("\n" + this.getHoVaTen() + " quản lí các nhân viên:");
             System.out.println("\n" + (i + 1) + ". ");
             nvt.display();
         }
