@@ -141,12 +141,13 @@ public class DanhSachNhanSu extends ArrayList<NhanSu> implements I_NhanSu {
                         TruongPhong truongPhongMuonXoa = getTruongPhong();
                         if(truongPhongMuonXoa != null)
                         {
+                            truongPhongMuonXoa.cacNhanVienDuoiQuyen();
                             confirmTruongPhong = Utils.getBoolean("\nBạn có chắc là muốn xóa trưởng phòng này không? (Y/N)");
                             if (confirmTruongPhong)
                             {
                                 for (NhanSu nhanSu : this)
                                 {
-                                    if(nhanSu instanceof NhanVienThuong && ((NhanVienThuong) nhanSu).getTruongPhongQuanLy().equals(truongPhongMuonXoa.getHoVaTen()))
+                                    if(nhanSu instanceof NhanVienThuong && ((NhanVienThuong) nhanSu).getTruongPhongQuanLy().equals(truongPhongMuonXoa.getMaSO()))
                                     {
                                         ((NhanVienThuong) nhanSu).setTruongPhongQuanLy("Chưa có trưởng phòng quản lí");
                                     }
@@ -423,9 +424,10 @@ public class DanhSachNhanSu extends ArrayList<NhanSu> implements I_NhanSu {
                 {
                     System.out.println("Danh sách lỗi");
                 }
-                String tenQuanLy = truongPhong.getHoVaTen();
-                nhanVienThuong.setTruongPhongQuanLy(tenQuanLy);
+                String maQuanLy = truongPhong.getMaSO();
+                nhanVienThuong.setTruongPhongQuanLy(maQuanLy);
                 int soNhanVienDuoiQuyen = truongPhong.getSoLuongNhanVienDuoiQuyen();
+                truongPhong.setDanhSachNhanVienDuoiQuyen(nhanVienThuong);
                 truongPhong.setSoLuongNhanVienDuoiQuyen(++soNhanVienDuoiQuyen);
                 result = true;
 

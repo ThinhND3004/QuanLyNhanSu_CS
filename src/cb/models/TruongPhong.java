@@ -1,7 +1,11 @@
 package cb.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TruongPhong extends NhanSu{
     private int soLuongNhanVienDuoiQuyen;
+    private List<NhanVienThuong> danhSachNhanVienDuoiQuyen;
 
     public void display()
     {
@@ -18,6 +22,18 @@ public class TruongPhong extends NhanSu{
         super(hoVaTen, maSO, soDienThoai, soNgayLamViec);
         this.soLuongNhanVienDuoiQuyen = 0;
         this.setLuongMotNgay(200);
+        this.danhSachNhanVienDuoiQuyen = new ArrayList<>();
+    }
+
+    public void getDanhSachNhanVienDuoiQuyen() {
+        for (NhanVienThuong nvt : danhSachNhanVienDuoiQuyen)
+        {
+            nvt.display();
+        }
+    }
+
+    public void setDanhSachNhanVienDuoiQuyen(NhanVienThuong nvt) {
+        danhSachNhanVienDuoiQuyen.add(nvt);
     }
 
     public TruongPhong(int soLuongNhanVienDuoiQuyen) {
@@ -36,4 +52,16 @@ public class TruongPhong extends NhanSu{
     public double tinhLuong() {
         return this.getLuongMotNgay() * this.getSoNgayLamViec() + 100 * this.getSoLuongNhanVienDuoiQuyen();
     }
+
+    public void cacNhanVienDuoiQuyen()
+    {
+        for (int i = 0; i < danhSachNhanVienDuoiQuyen.size(); i++)
+        {
+            NhanVienThuong nvt = danhSachNhanVienDuoiQuyen.get(i);
+            System.out.println("\n" + this.getHoVaTen() + " quản lí các nhân viên:");
+            System.out.println("\n" + (i + 1) + ". ");
+            nvt.display();
+        }
+    }
+
 }
